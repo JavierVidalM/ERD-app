@@ -1,0 +1,32 @@
+.custom-range {
+    height: 0.2rem;
+    width: 100%;
+    appearance: none;
+    background-color: rgb(148 163 184);
+    opacity: 0.6;
+    transition: all;
+    border-radius: 9999px;
+}
+
+.custom-range:hover {
+    opacity: 1;
+}
+
+.custom-range::-webkit-slider-thumb {
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    background-color: rgb(168 85 247);
+    border-radius: 100%;
+    
+}
+
+.custom-range:disabled {
+    height: 0.2rem;
+    width: 100%;
+    appearance: none;
+    background-color: rgb(94, 94, 94);
+    opacity: 0.6;
+    transition: all;
+    border-radius: 9999px;
+}

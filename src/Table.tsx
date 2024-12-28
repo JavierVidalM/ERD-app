@@ -120,7 +120,7 @@ export default function Table({ data }: any) {
   };
 
   return (
-    <div className="">
+    <div className="w-full">
       <div
         onDoubleClick={handleEditingTitle}
         className={`flex px-5 py-3 ${color.bg} rounded-t-lg justify-between items-center relative`}
@@ -145,15 +145,16 @@ export default function Table({ data }: any) {
         {columns?.map((column: tableColumns, index) => (
           <div
             key={column.id}
-            className="w-full h-10 flex items-center border-t-slate-200 border-t-1"
+            className="w-full h-10 flex items-center border-t-slate-200 border-t-1 group"
           >
             <Handle
               type="source"
               position={Position.Left}
               id={`${index}-left`}
+              className="!opacity-0 group-hover:!opacity-100 transition-opacity"
               style={{
                 left: -8,
-                top: `${48 + index * 48 + 28}px`,
+                top: `${42 + index * 48 + 28}px`,
                 background: "#555",
               }}
             />
@@ -161,11 +162,13 @@ export default function Table({ data }: any) {
               type="target"
               position={Position.Right}
               id={`${index}-right`}
+              className="!opacity-0 group-hover:!opacity-100 transition-opacity"
               style={{
                 right: -8,
-                top: `${48 + index * 48 + 28}px`,
+                top: `${42 + index * 48 + 28}px`,
                 background: "#555",
               }}
+              
             />
             <div
               className="w-1/5 h-full flex items-center justify-center"
@@ -190,7 +193,7 @@ export default function Table({ data }: any) {
                   className="w-full h-full border-transparent text-start focus-visible:outline-none px-2"
                 />
               ) : (
-                <div className="flex w-full h-full font-medium content-center align-middle items-center justify-start px-1">
+                <div className="flex min-w-fit h-full font-medium content-center align-middle items-center justify-start px-1 text-ellipsis ">
                   {column.columnName}
                 </div>
               )}

@@ -1,7 +1,7 @@
 import { GithubIcon } from "./assets/icons/GithubIcon";
-import AboutProps from "./types/modalTypes";
+import { AboutModalProps } from "./types/modalTypes";
 
-export default function About({ isOpen, onClose }: AboutProps) {
+export default function About({ isOpen, onClose }: AboutModalProps) {
     if (!isOpen) return null
   return (
     <div
